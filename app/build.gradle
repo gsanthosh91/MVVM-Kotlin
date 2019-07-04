@@ -1,12 +1,13 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: "kotlin-kapt"
+apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.lenovo.mvvm"
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -52,7 +53,8 @@ dependencies {
     implementation "com.google.dagger:dagger:2.16"
     implementation "com.google.dagger:dagger-android:2.9"
     kapt "com.google.dagger:dagger-compiler:2.16"
-//    kapt "com.google.dagger:dagger-android-processor:2.9"
+
+    implementation project(path: ':spincountrypicker')
 }
 repositories {
     mavenCentral()
